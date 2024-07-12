@@ -6,10 +6,14 @@
     <el-table-column prop="city" label="City" width="320" />
     <el-table-column prop="address" label="Address" width="600" />
     <el-table-column prop="zip" label="Zip" />
+    <tetemplate #append>
+      <InfiniteLoading  @infinite="Loading()></InfiniteLoading>
+    </tetemplate>
   </el-table>
 </template>
 
 <script lang="ts" setup>
+import InfiniteLoading from "v3-infinite-loading"
 const tableData = [
   {
     date: '2016-05-03',
@@ -68,4 +72,8 @@ const tableData = [
     zip: 'CA 90036',
   },
 ]
+const Loading =() =>
+{
+        this.count += 2
+}
 </script>
